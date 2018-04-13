@@ -16,11 +16,9 @@ The virus database is usually updated many times per week. Sign up for our [Viru
 
 You can check for database update as often as 4 times per hour provided that you have the following options in freshclam.conf: 
 
-```
-DNSDatabaseInfo current.cvd.clamav.net
-DatabaseMirror db.XY.clamav.net
-DatabaseMirror database.clamav.net
-```  
+    DNSDatabaseInfo current.cvd.clamav.net
+    DatabaseMirror db.XY.clamav.net
+    DatabaseMirror database.clamav.net
 
 Replace XY with your [country code].  If you don't have that option, then you must stick with 1 check per hour.
 
@@ -86,12 +84,10 @@ Sure, you can find more details on our [Mirror page].
   * Let freshclam download the \*.cvd files from http://database.clamav.net to the webserver's DocumentRoot. 
 
   * Finally, change freshclam.conf on your clients so that it includes:
-    
-    ```
-    DatabaseMirror machine1.mylan
-    ScriptedUpdates off
-    ```
-    
+
+            DatabaseMirror machine1.mylan
+            ScriptedUpdates off
+
     First the database will be downloaded to the local webserver and then the other clients on the network will update their copy of the database from it. 
     
     _Important_:  For this to work, you have to add `ScriptedUpdates off` on all of your machines!
